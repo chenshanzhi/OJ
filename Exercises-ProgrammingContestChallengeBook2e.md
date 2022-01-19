@@ -9,7 +9,8 @@
 - [AOJ 0118](https://onlinejudge.u-aizu.ac.jp/problems/0118)
   - Naive DFS from every unvisited vertex of the graph.
 - [AOJ 0033](https://onlinejudge.u-aizu.ac.jp/problems/0033)
-  - Greedy algorithm: Keep the two uppermost values in both cylinders: $l$ and $r$, where $(l < r)$. For a newly-dropped ball of value $e$:
+  - Naive DFS works since $n = 10$. There are at most $2^n = 1024$ possiblities.
+  - Greedy algorithm also works. Keep the two uppermost values in both cylinders: $l$ and $r$, where $(l < r)$. For a newly-dropped ball of value $e$:
     - If $e < l < r$, it can be placed on neither side.
     - If $l < e < r$, it can only be placed on $l$.
     - If $l < r < e$, it can be placed on either $l$ or $r$. But it should be placed on $r$ since placing $e$ on $l$ is never better than placing $e$ on $r$. 
@@ -37,15 +38,40 @@
   - Bit manipulation: `__built_in_popcount` in GCC or `std::popcount` since C++20.
 
 ## 2.2
-- POJ 2376
-- POJ 1328
-- POJ 3190
-
-- POJ 2393
-- POJ 1017
-- POJ 3040
-- POJ 1862
-- POJ 3262
+- [POJ 2376](http://poj.org/problem?id=2376)
+  - The unassigned shift $[L, T]$ can be assigned to the cow $i$ that is available on the interval $[L_i, R_i]$ as long as $L_i \le L$. And among all feasible choices, we choose the one with maximum $R_i$, which makes the remaining unassigned shift becomes $[R_i + 1, T]$.
+- [**POJ 1328**](http://poj.org/problem?id=1328)
+  - Each island corresponds to an interval $[a_i, b_i]$ on the $x$-axis, on which we could install a radar to cover the island.
+  - Sort the intervals $[a_i, b_i]$ in nondescreasing order: $[a_i, b_i] < [a_j, b_j] \iff ((a_i < b_j) \lor (a_i = a_j \land b_i < b_j))$. 
+  - For $i = 1, 2, \dots, N$, make the current radar cover islands as many as possible.
+- [POJ 3190](http://poj.org/problem?id=3190)
+  - Sort the intervals $[a_i, b_i]$ in nondescreasing order: $[a_i, b_i] < [a_j, b_j] \iff a_i < b_j$. 
+  - For the cow with interval $[a_i, b_i]$:
+    - If none of the stall is available for it, add a new stall.
+    - Else, for all available stalls, choose any one of them. We choose the one that is available as early as possible.
+- [POJ 2393](http://poj.org/problem?id=2393)
+  - The cost chosen in the $n$-th week should be the minimum cost from week $1$ to week $n$, which is:
+  $$\min_{1 \le i \le n}{\{ c_i + s \cdot (n - i)\}} = \min_{1 \le i \le n}{\{ c_i - s \cdot i\}} + s \cdot n$$
+  - CAUTION: Since $N \cdot C \cdot Y = 10^{4} \cdot 5000 \cdot 10^4 = 5 \cdot 10^{12} < 2^{40}$,`long long` should be used.
+- [POJ 1017](http://poj.org/problem?id=1017)
+  - Greedy algorithm: Deliver packets in decreasing order.
+    - Deliver the packet of $6 \times 6$, $5 \times 5$, $4 \times 4$, $3 \times 3$ and remember the space left for $2 \times 2$ and $1 \times 1$.
+    - Deliver $2 \times 2$: use the space left previously for $2 \times 2$ as much as possible and then transform the unused space for $2 \times 2$ into $1 \times 1$.
+    - Deliver $1 \times 1$: use space left previously for $1 \times 1$ as much as possible.
+- [**POJ 3040**](http://poj.org/problem?id=3040)
+  - To pay at least $C$ cents, choose coins in two steps:
+    - Choose coins from large to small to pay some cents that is close to but not exceeding $C$.
+    - Choose coins from small to large to pay the remaining cents.
+- [POJ 1862](http://poj.org/problem?id=1862)
+  - The result is $ 2^{N-1} \cdot m_1^{0.5^{N-1}} \cdot m_2^{0.5^{N-1}} \cdot m_3^{0.5^{N-2}} \cdots  m_k^{0.5^{N+1-k}} \cdots m_{N-1}^{0.5^2} \cdot m_N^{0.5} $,
+  which is minimized when $m_1 \ge m_2 \ge m_3 \ge \cdots \ge m_{N-1} \ge m_N$.
+  - Proof: Assume $1 < i < j$ and $m_i \ge m_j > 0$, exchange the $i$-th and $j$-th element make the result smaller since
+    $$ \frac{m_i^{0.5^{N+1-i}} \cdot m_j^{0.5^{N+1-j}}}{m_j^{0.5^{N+1-i}} \cdot m_i^{0.5^{N+1-j}}} = 
+    (\frac{m_i}{m_j})^{0.5^{j - i}} \ge 1
+    $$
+- [POJ 3262](http://poj.org/problem?id=3262)
+  - Intuition: Transport the cows with larger $\frac{D}{T}$ as soon as possible, since they eat faster and the time to transport them is shorter.
+  - Proof: The difference of the flower losses introduced by exchanging the $i$-th and the $(i+1)$-th is $T_{i + 1} \cdot D_{i} \to T_i \cdot D_{i + 1}$. That's to say, exchanging any consecutive pair that satisfies $T_{i + 1} \cdot D_{i} > T_i \cdot D_{i + 1}$  can generate less flower losses.
 
 ## 2.3
 - POJ 3176
