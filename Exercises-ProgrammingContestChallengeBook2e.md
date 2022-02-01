@@ -74,21 +74,150 @@
   - Proof: The difference of the flower losses introduced by exchanging the $i$-th and the $(i+1)$-th is $T_{i + 1} \cdot D_{i} \to T_i \cdot D_{i + 1}$. That's to say, exchanging any consecutive pair that satisfies $T_{i + 1} \cdot D_{i} > T_i \cdot D_{i + 1}$  can generate less flower losses.
 
 ## 2.3
-- POJ 3176
-- POJ 2229
-- POJ 2385
-- POJ 3616
-- POJ 3280
+- [POJ 3176](http://poj.org/problem?id=3176)
+  - $$
+  \begin{align*}
+    \text{dp}[i][j] = \left\{
+    \begin{array}{ll}
+    \max{\{\text{dp}[i - 1][j - 1], \text{dp}[i - 1][j]\}}  + \text{a}[i][j] & (1 \le j \le i \le N) \\
+    0 & (\text{otherwise}) \\
+    \end{array}
+    \right.
+  \end{align*}
+  $$
 
-- POJ 1742
-- POJ 3046
-- POJ 3181
+- [POJ 2229](http://poj.org/problem?id=2229)
+  - Hint: Is $1$ in the sum or not?
+  - $$
+  \begin{align*}
+    & \text{dp}[n] =
+    \left\{
+      \begin{array}{ll}
+        0                                           & (n = 0) \\
+        \text{dp}[n - 1]                            & (n > 0, n \bmod 2 = 1) \\
+        \text{dp}[\frac{n}{2}] + \text{dp}[n - 1]   & (n > 0, n \bmod 2 = 0) \\
+      \end{array}
+    \right.
+  \end{align*}
+  $$
 
-- POJ 1065
-- POJ 1631
-- POJ 3666
-- POJ 2392
-- POJ 2184
+- [POJ 2385](http://poj.org/problem?id=2385)
+  - Define state as $(t, w, r)$:
+    - $t \coloneqq$ current minute: $0, 1, 2, 3, \dots, T$.
+    - $w \coloneqq$ number of chances left to walk to another tree: $W, W-1, \dots, 1, 0$.
+    - $r \coloneqq$ tree number: $1$ or $2$.
+    - $a_t \coloneqq$ the tree that will drop an apple at minute $t$.
+    - $f(t, w, r) \coloneqq$ maximum number of apples that can be caught from time $t$ on condition that the cow is currently under tree $r$ and has last $w$ chances to walk to another tree.
+    - $$
+    \left\{
+    \begin{align*}
+      & f(T, *, *) = 0  \\
+      & f(t, 0, r) = f(t + 1, 0, r) + [a_t = r] \\
+      & f(t, w, r) = \max{\{ f(t + 1, w, r) + [a_t = r],  f(t + 1, w - 1, 3 - r) + [a_t \ne r]\}} \\
+    \end{align*}
+    \right.
+    $$
+
+- [POJ 3616](http://poj.org/problem?id=3616)
+  - Sort the intervals by the ending hour.
+  - $\text{dp}[i + 1] \coloneqq $ maximum amount of milk that can be produced in the first $i$ intervals.
+  - $A_i \coloneqq $ starting hour of the $i$-th interval.
+  - $B_i \coloneqq $ ending hour of the $i$-th interval.
+  - $W_i \coloneqq $ efficiency of the $i$-th interval.
+  - $$
+  \begin{align*}
+    \text{dp}[i] = \left\{
+    \begin{array}{ll}
+      0 & (i = 0) \\
+      \text{dp}[k] + W_i & (i > 0, k \text{ is the max ending hour that satisfies $B_k + R \le A_i$}) \\
+    \end{array}
+    \right. \\
+  \end{align*}
+  $$
+
+- [POJ 3280](http://poj.org/problem?id=3280)
+  - In this problem, adding a character or deleting a character would make the same contribution to generate a palindrome. So we always choose the way with less cost.
+  - $c[s_i] \coloneqq$ the less cost between adding and deleting the character $s_i$.
+  - $\text{dp}[i][j] \coloneqq$ the cost to change the substring $ s_i, s_{i + 1}, \cdots, s_{j-1}, s_j $ into palindrome.
+  - $$
+  \begin{align*}
+    \text{dp}[i][j] =
+    \left\{
+      \begin{array}{ll}
+        0 & (i \ge j) \\
+        \text{dp}[i + 1][j - 1] & (i < j \land s_i = s_j) \\
+        \min{\{ \text{dp}[i + 1][j] + c[s_i], \text{dp}[i][j - 1] + c[s_j] \}} & (i < j \land s_i = s_j) \\
+      \end{array}
+    \right.
+  \end{align*}
+  $$
+
+- [POJ 1742](http://poj.org/problem?id=1742)
+  - $\text{dp}[i + 1][j] \coloneqq $ maximum number of coins of value $A_i$ left when the exact price paid is $j$. ($-1$ if there's no feasible solution).
+  - $$
+  \begin{align*}
+  \text{dp}[i + 1][j] =
+    \left\{
+      \begin{array}{ll}
+        C_i                           & (\text{dp}[i][j] \ge 0) \\
+        -1                            & (j < A_i \lor \text{dp}[i + 1][j - A_i] \le 0) \\
+        \text{dp}[i + 1][j - A_i] - 1 & (\text{otherwise}) \\
+      \end{array}
+    \right.
+  \end{align*}
+  $$
+
+- [POJ 3046](http://poj.org/problem?id=3046)
+  - $\text{dp}[i][j] \coloneqq $ number of $j$-nary sets that can be formed by the first $i$ ant families.
+  - $$\text{dp}[i][j] = \sum_{t = \max{\{0, j - N_i\}}}^{j} {\text{dp}[i - 1][t]}$$
+  - Optimization: Prefix Sum.
+
+- [POJ 3181](http://poj.org/problem?id=3181)
+  - $\text{dp}[i][j] \coloneqq $ the number of ways to spend $j$ dollars to buy from the first $i$ tools.
+  - $$ \text{dp}[i][j] = \text{dp}[i - 1][j] + \text{dp}[i - 1][j - i] + \text{dp}[i - 1][j - 2\cdot i] + \dots + \text{dp}[i - 1][j - \lfloor \frac{j}{i} \rfloor \cdot i] $$
+  - Optimization: Since each item in the sum above is $i$ distance apart, a vector is used to record the sums whose elements are $i$ distance part.
+  - Arbitrary-precision arithmetic.
+
+- [POJ 1065](http://poj.org/problem?id=1065)
+  - Essentially, the result is the minimum number of nondecreasing subsequences. 
+  - Use `std::set` to keep the last element of the nondecreasing subsequences.
+  - Greedily append new elements $e$ to the nondecreasing subsequence whose last element is closest to but not exceeding $e$.
+
+- [POJ 1631](http://poj.org/problem?id=1631)
+  - Longest Increasing Subsequence.
+  - $ \text{dp}[i] \coloneqq $ the minimum value of the last elements in an increasing subsequence of length $i + 1$.
+
+- [POJ 3666](http://poj.org/problem?id=3666)
+  - $B_i \in \{ A_1, A_2, \dots, A_N \}$.
+  - Assuming that there are $K$ distinct numbers $U_1, U_2, U_3, \dots, U_K$ in  $\{ A_1, A_2, \dots, A_N \}$ where $U_1 < U_2 < U_3 < \dots < U_K$, a nondecreasing sequence $B_1, B_2, B_3, \dots, B_N $ can be represented as $ U_{t_1}, U_{t_2}, U_{t_3}, \dots, U_{t_N}$  where $1 \le t_1 \le t_2 \le \dots \le t_N \le K$.
+  - $\text{dp}[i][j] \coloneqq $ the minimum cost to adjust $A_1, \dots A_i $ to a new sequence ended in $U_{j}$.
+  - $$
+  \text{dp}[i][j] =
+    \left\{
+      \begin{array}{ll}
+      0                                                         & (i = 0) \\
+      \min_{1 \le k \le j}{\{ dp[i - 1][k] + |A_i - U_k | \} }  & (i > 0) \\
+      \end{array}
+    \right.
+  $$
+
+- [POJ 2392](http://poj.org/problem?id=2392)
+  - $\text{dp}[i + 1][j] \coloneqq $ the maximum number of blocks $i$ left when building a space elevator of height $j$ using blocks from $0$ to $i$, -1 if there's no feasible solution.
+
+  - $$
+      \text{dp}[i + 1][j] =
+      \left\{
+        \begin{array}{ll}
+          -1                            & (j > a_i) \\
+          c_i                           & (\text{dp}[i][j] \ge 0) \\
+          -1                            & (j < h_i \lor \text{dp}[i + 1][j - h_i] \le 0) \\
+          \text{dp}[i + 1][j - h_i] - 1 & (\text{otherwise}) \\
+        \end{array}
+      \right.
+    $$
+
+- [POJ 2184](http://poj.org/problem?id=2184)
+  - 0-1 Knapsack Problem and Hashing: In hash table, the key is sum of "Smartness" and the value is the maximum sum of "Funness".
 
 ## 2.4
 - POJ 3614
