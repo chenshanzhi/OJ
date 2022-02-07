@@ -220,12 +220,24 @@
   - 0-1 Knapsack Problem and Hashing: In hash table, the key is sum of "Smartness" and the value is the maximum sum of "Funness".
 
 ## 2.4
-- POJ 3614
-- POJ 2010
+- [POJ 3614](http://poj.org/problem?id=3614)
+  - Use lotions from small `SPF` to large `SPF`. If there are multiple cows that can be protected by a lotion, we first protect the cows with smaller `maxSPF`.
 
-- POJ 2236
-- POJ 1703
-- POJ 2170
+- [POJ 2010](http://poj.org/problem?id=2010)
+  - Sort the cows by score.
+  - For each candidate of the median score, the min sum of financial aids should be $L + C + R$:
+    - $L$ is the min sum of any $\frac{N}{2}$ cows's finanial aid before the candidate.
+    - $R$ is the min sum of any $\frac{N}{2}$ cows's finanial aid after the candidate.
+    - $C$ is the candidate's financial aid.
+  - During calculate $L$ (or $R$) for each candidate of the median score, keep the $\frac{N}{2}$ cows of $L$ (or $R$) in a `std::priority_queue`.
+
+- [POJ 2236](http://poj.org/problem?id=2236)
+  - Naive union-find.
+- [POJ 1703](http://poj.org/problem?id=1703)
+  - Union-find and equivalence classes.
+- [AOJ 2170](https://onlinejudge.u-aizu.ac.jp/problems/2170)
+  - Union-find and path compression.
+  - In this problem, after a node is marked, current disjoint sets would be further splitted into a larger number of disjoint sets. So the query/mark operations are kept in a sequence and handled in reverse order, which would convert splitting operations into union operations.
 
 ## 2.5
 - AOJ 0189
