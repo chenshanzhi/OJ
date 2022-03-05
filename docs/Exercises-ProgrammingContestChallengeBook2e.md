@@ -320,17 +320,60 @@
   - The maximum edge length in the minimum spanning tree.
 
 ## 2.6
-### AOJ 0005
-### POJ 2429
-### POJ 1930
+### [AOJ 0005](https://onlinejudge.u-aizu.ac.jp/problems/0005)
+  - GCD and LCM.
+### [**POJ 2429**](http://poj.org/problem?id=2429)
+  - Miller-Rabin primality test.
+  - Integer factorization with Pollard's rho algorithm.
+  - DFS. The depth of DFS in this problem is at most 16 since we have the experiential knowledge:
+    ```
+    2*3*5*7*11*13*17*19*23*29*31*37*41*43*47    = 0x0888 86FF DB34 4692
+    2*3*5*7*11*13*17*19*23*29*31*37*41*43*47*53 = 0xC443 F2F8 61D2 9C3A
+    ```
+  - Some test cases for debugging.
+    ```
+    21 614889782588491410
+    // --> 3577359786 3609557385
+    // 614889782588491410 = 2*3*5*7*11*13*17*19*23*29*31*37*41*43*47
 
-### AOJ 0009
-### POJ 3126
-### POJ 3421
-### POJ 3292
+    13 6121863882679589928
+    // --> 7190755416 11067575779
+    // 6121863882679589928 = 2*2*2*3*3*13*71*7682431*11990873
 
-### POJ 3641
-### POJ 1995
+    17 3423517729149215872
+    // --> 2806947503 20734196608
+    // 3423517729149215872 = 2*2*2*2*2*2*2*17*1433*115223*9528583
+    ```
+### [POJ 1930](http://poj.org/problem?id=1930)
+  - Converting a repeating decimal to a fraction.
+    ```math
+    \begin{align*}
+    x &= 0.\overline{a_1 a_2 a_3 \cdots a_n} \\
+    10^n \cdot x &= a_1 a_2 a_3 \cdots a_n.\overline{a_1 a_2 a_3 \cdots a_n} \\
+    (10^n - 1) \cdot x &= a_1 a_2 a_3 \cdots a_n \\
+    x &= \frac{a_1 a_2 a_3 \cdots a_n}{10^n - 1} \\
+    \end{align*}
+    ```
+  - In this problem, the input $` 0.d_1 d_2 d_3 \cdots d_n\dots `$ might be interpreted as a repeating decimal whose repetend has $`k`$ digits $`(1 \le k \le n)`$. We need to convert the $`n`$ repeating decimals to fractions and use GCD to get the simplest forms.
+
+### [AOJ 0009](https://onlinejudge.u-aizu.ac.jp/problems/0009)
+  - Sieve of Eratosthenes and Prefix Sum.
+### [POJ 3126](http://poj.org/problem?id=3126)
+  - Sieve of Eratosthenes and BFS.
+### [POJ 3421](http://poj.org/problem?id=3421)
+  - Naive factorization: $` X = p_{1}^{e_1} \cdot p_{2}^{e_2}  \cdots p_{k-1}^{e_{k-1}} \cdot p_{k}^{e_k} `$
+  - Maximum length: $` n = e_1 + e_2 + \cdots + e_k `$
+  - Number of such X-factors chains:
+    $` x = \binom{n}{e_1} \cdot \binom{n - e_1}{e_2} \cdot \binom{n - e_1 - e_2}{e_3} \cdots \binom{n - e_1 - \cdots - e_{k - 1}}{e_k} = \frac{n!}{e_1! e_2! \cdots e_k!} `$
+  - Experiential knowledge:
+    - $`20! < 2^{63} < 2^{64} < 21!`$
+### [POJ 3292](http://poj.org/problem?id=3292)
+  - Sieve of Eratosthenes, Precomputation, Prefix Sum.
+  - In this problem, an H-semi-prime number is an H-number which is the product of exact two H-primes. It's worth noting that while enumerating the product of two H-primes, the same H-semi-prime might be enumerated twice, e.g. $` 441 = 9 \times 49 = 21 \times 21 `$.
+### [POJ 3641](http://poj.org/problem?id=3641)
+  - Binary exponentiation and primality test.
+### [POJ 1995](http://poj.org/problem?id=1995)
+  - Binary exponentiation.
 
 ## 3.1
 ### POJ 3258
