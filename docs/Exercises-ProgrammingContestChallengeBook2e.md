@@ -772,11 +772,61 @@
 
 ## 3.2
 ### POJ 2566
+[:octicons-link-24: Problem][problem-poj-2566]
+[:octicons-file-code-24: Code][code-poj-2566]
+
+  - Sliding Window and Prefix Sum.
+  - For the original sequence $`\{ a_1, a_2, \dots a_n \}`$,
+    an sorted array of prefix sums $`\{ S_{p_1}, S_{p_2}, \dots S_{p_n} \}`$ is
+    computed, where $`S_{p_1} \le S_{p_2} \le \dots \le S_{p_n}`$ and
+    $`S_{p_k} = \sum_{i = 1}^{p_k}{a_i}`$.
+  - Our objective is to find the subrange of sequence whose absolute value
+    of its sum is closest to $`t`$ where $`(0 \le t \le 10^9)`$.
+  - By definition,
+    ```math
+    |a_l + a_{l+1} + \cdots + a_r| = |S_{r} - S_{l-1}| = S_{p_j} - S_{p_i} \\
+    (l \le r, i < j)
+    ```
+    In this equation, finding $`(l, r)`$ that meets the criteria above for $`\{ a_n \}`$
+    is equivalent to finding $`(p_i, p_j)`$ that meets the criteria above for $`\{ S_n \}`$,
+    is also equivalent to finding $`(i, j)`$ for $`\{ S_{p_n} \}`$.
+    ```math
+    \left\{
+    \begin{align*}
+      l &= \min{\{ p_i, p_j \}} + 1 \\
+      r &= \max{\{ p_i, p_j \}} \\
+    \end{align*}
+    \right.
+    ```
+  - Sliding window can be used to find $`(i, j)`$ for $`\{ S_{p_n} \}`$.
+
 ### POJ 2739
+[:octicons-link-24: Problem][problem-poj-2739]
+[:octicons-file-code-24: Code][code-poj-2739]
+
+  - Sliding Window and Sieve of Eratosthenes.
+
 ### POJ 2100
+[:octicons-link-24: Problem][problem-poj-2100]
+[:octicons-file-code-24: Code][code-poj-2100]
+
+  - Sliding Window.
 
 ### POJ 3185
+[:octicons-link-24: Problem][problem-poj-3185]
+[:octicons-file-code-24: Code][code-poj-3185]
+
+  - This problem is a variant of POJ 3276 where $`N = 22`$ and $`K = 3`$ if we add two bowls at two ends.
+  - A bowl never needs to be flipped more than once.
+  - For the leftmost bowl, flip it or not? It depends only on its own state.
+  - For other bowls, flip it or not? It not only depends on its own state, but also depends on whether the previous bowls are flipped.
+
 ### POJ 1222
+[:octicons-link-24: Problem][problem-poj-1222]
+[:octicons-file-code-24: Code][code-poj-1222]
+
+  - Enumeration.
+  - This problem is a variant of POJ 3279.
 
 ### POJ 2674
 

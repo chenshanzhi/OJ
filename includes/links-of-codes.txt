@@ -13,6 +13,7 @@
 [code-aoj-2249]: https://github.com/chenshanzhi/OJ/blob/main/AOJ/2249.cpp
 [code-poj-1017]: https://github.com/chenshanzhi/OJ/blob/main/POJ/1017.cpp
 [code-poj-1065]: https://github.com/chenshanzhi/OJ/blob/main/POJ/1065.cpp
+[code-poj-1222]: https://github.com/chenshanzhi/OJ/blob/main/POJ/1222.cpp
 [code-poj-1258]: https://github.com/chenshanzhi/OJ/blob/main/POJ/1258.cpp
 [code-poj-1328]: https://github.com/chenshanzhi/OJ/blob/main/POJ/1328.cpp
 [code-poj-1631]: https://github.com/chenshanzhi/OJ/blob/main/POJ/1631.cpp
@@ -24,6 +25,7 @@
 [code-poj-1979]: https://github.com/chenshanzhi/OJ/blob/main/POJ/1979.cpp
 [code-poj-1995]: https://github.com/chenshanzhi/OJ/blob/main/POJ/1995.cpp
 [code-poj-2010]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2010.cpp
+[code-poj-2100]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2100.cpp
 [code-poj-2139]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2139.cpp
 [code-poj-2184]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2184.cpp
 [code-poj-2229]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2229.cpp
@@ -35,7 +37,9 @@
 [code-poj-2393]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2393.cpp
 [code-poj-2395]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2395.cpp
 [code-poj-2429]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2429.cpp
+[code-poj-2566]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2566.cpp
 [code-poj-2718]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2718.cpp
+[code-poj-2739]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2739.cpp
 [code-poj-2976]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2976.cpp
 [code-poj-3009]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3009.cpp
 [code-poj-3040]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3040.cpp
@@ -47,6 +51,7 @@
 [code-poj-3126]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3126.cpp
 [code-poj-3176]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3176.cpp
 [code-poj-3181]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3181.cpp
+[code-poj-3185]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3185.cpp
 [code-poj-3187]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3187.cpp
 [code-poj-3190]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3190.cpp
 [code-poj-3258]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3258.cpp
