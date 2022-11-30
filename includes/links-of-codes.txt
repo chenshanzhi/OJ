@@ -37,7 +37,9 @@
 [code-poj-2393]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2393.cpp
 [code-poj-2395]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2395.cpp
 [code-poj-2429]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2429.cpp
+[code-poj-2549]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2549.cpp
 [code-poj-2566]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2566.cpp
+[code-poj-2674]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2674.cpp
 [code-poj-2718]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2718.cpp
 [code-poj-2739]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2739.cpp
 [code-poj-2976]: https://github.com/chenshanzhi/OJ/blob/main/POJ/2976.cpp
@@ -71,3 +73,4 @@
 [code-poj-3666]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3666.cpp
 [code-poj-3669]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3669.cpp
 [code-poj-3685]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3685.cpp
+[code-poj-3977]: https://github.com/chenshanzhi/OJ/blob/main/POJ/3977.cpp

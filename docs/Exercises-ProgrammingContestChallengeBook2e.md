@@ -829,9 +829,71 @@
   - This problem is a variant of POJ 3279.
 
 ### POJ 2674
+[:octicons-link-24: Problem][problem-poj-2674]
+[:octicons-file-code-24: Code][code-poj-2674]
+
+  - Perfect elastic collision and relative motion.
+    - In this problem, if two inhabitants encounter each other, they would turn around and move in an opposite direction.
+      This is equivalent to the senario that they keep going but exchange their names.
+      Under the assumption that all inhabitants have the same constant value of velocity,
+      the last one to fall away must be the one that goes the longest distance before reaching the end.
+      That is either the leftmost one who goes right or the rightmost one who goes left.
+    - All inhabitants in the same direction can be treated as a whole.
+      Their relative position remains unchanged before/after collisions.
+  - Assume that the initial positions and names are recorded in `pos[]` and `name[]`.
+    And the inhabitant in `pos[i]` is last one to fall away.
+    - If the inhabitant in `pos[i]` is the leftmost one who goes right;
+      and on the right of `pos[i]`, there are `k` inhabitants going left.
+      Then the last one to fall away is `name[i + k]`.
+    - If the inhabitant in `pos[i]` is the rightmost one who goes left;
+      and on the left of `pos[i]`, there are `k` inhabitants going right.
+      Then the last one to fall away is `name[i - k]`.
+
+  - CAUTION: 
+    - `printf("%.2f\n", 1.777f);` would print `1.78` rather than `1.77`.
+      The integer after `.` in the format specifier specifies precision of the conversion. The value is not truncated.
+    - `scanf(" %c", &ch);` should be used to consume all leading whitespace (including `'\n'` in the last input line) before reading a character.
+      Pay attention to the space before `%c` in the format specifier.
 
 ### POJ 3977
+[:octicons-link-24: Problem][problem-poj-3977]
+[:octicons-file-code-24: Code][code-poj-3977]
+
+  - Enumeration and binary search.
+  - For $`N = 35`$, there are $`2^{35}`$ possible results.
+    Based on our experiences, it's infeasible to enumerate all of them in the given time.
+    But it's feasible to enumerate $`2^{20}`$ results in the given time.
+    Therefore, divide the $`N (\le 35)`$ numbers into two parts ($`N = A + B, A \le 20, B \le 20`$).
+    To get the minimum absolute sum and the number of elements in the optimal subset, there are three cases:
+    - Case 1: The numbers in the optimal subset are all from the first part.
+    - Case 2: The numbers in the optimal subset are all from the second part.
+    - Case 3: The numbers in the optimal subset are chosen from both parts.
+  - For Case 1 or Case 2, it is feasible to enumerate all $`2^{A} - 1`$ or $`2^{B} - 1`$ non-empty subsets in the given time.
+  - For Case 3, we could enumerate the possible optimal subsets in $`\mathcal{O}(A \cdot (2^A + 2^B))`$ time.
+    - A non-empty subset in Case 3 corresponds to one non-empty subset in Case 1 and one non-empty subset in Case 2.
+    - For the $`2^A - 1`$ non-empty subsets in Case 1, sort these subsets by their sums.
+      And if some subsets have the same value of sums, keep the one subset with the fewest numbers.
+      Such processing can be done in $`\mathcal{O}(2^A \cdot A)`$ time and we use $`X`$ to denote the processing result.
+    - For each of the $`2^B - 1`$ non-empty subsets in Case 2, use $`s`$ to represent its sum.
+      In order to get the minimum absolute sum of the $`2^A - 1`$ possibities,
+      binary search $`-s`$ in $`X`$ to get an index $`i`$, where $`X_{i - 1} < -s`$ and $`X_{i} \ge s`$.
+      The minimum absolute sum of the $`2^A - 1`$ possibilities would be either $`|s + X_{i - 1}|`$ or $`|s + X_i|`$.
+      Such processing can be done in $`\mathcal{O}(2^B \cdot A)`$ time.
+
 ### POJ 2549
+[:octicons-link-24: Problem][problem-poj-2549]
+[:octicons-file-code-24: Code][code-poj-2549]
+
+  - [The 3SUM problem](https://en.wikipedia.org/wiki/3SUM)
+    - 3SUM can be easily solved in $`\mathcal{O}(N^2)`$ time.
+    - To find the largest $`d`$ such that $`a + b + c = d`$, enumerate $`d`$ from large to small.
+    - Worst-case time complexity: $`\mathcal{O}(N^3)`$.
+  - Also, enumeration and binary search can be used to solve this problem.
+    - Enumerate all $`a + b`$ and all $`d - c`$.
+    - Sort the enumerations of $`a + b`$.
+    - Binary search a value of $`d - c`$ in the sorted enumerations of $`a + b`$.
+    - The elements between the lower bound and upper bound should be examined one by one until a feasible solution is found.
+      Therefore, the worst-case time complexity for this algorithm is not $`\mathcal{O}(N^{2} \log{N})`$.
 
 ### AOJ 0531
 

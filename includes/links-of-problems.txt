@@ -37,7 +37,9 @@
 [problem-poj-2393]: http://poj.org/problem?id=2393
 [problem-poj-2395]: http://poj.org/problem?id=2395
 [problem-poj-2429]: http://poj.org/problem?id=2429
+[problem-poj-2549]: http://poj.org/problem?id=2549
 [problem-poj-2566]: http://poj.org/problem?id=2566
+[problem-poj-2674]: http://poj.org/problem?id=2674
 [problem-poj-2718]: http://poj.org/problem?id=2718
 [problem-poj-2739]: http://poj.org/problem?id=2739
 [problem-poj-2976]: http://poj.org/problem?id=2976
@@ -71,3 +73,4 @@
 [problem-poj-3666]: http://poj.org/problem?id=3666
 [problem-poj-3669]: http://poj.org/problem?id=3669
 [problem-poj-3685]: http://poj.org/problem?id=3685
+[problem-poj-3977]: http://poj.org/problem?id=3977
