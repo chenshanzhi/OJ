@@ -896,6 +896,11 @@
       Therefore, the worst-case time complexity for this algorithm is not $`\mathcal{O}(N^{2} \log{N})`$.
 
 ### AOJ 0531
+[:octicons-link-24: Problem][problem-aoj-0531]
+[:octicons-file-code-24: Code][code-aoj-0531]
+
+  - Discretization.
+  - In this problem, the key idea is to eliminate the rows (columns) that have the same color with their previous and next rows (columns).
 
 ## 3.3
 ### POJ 1990

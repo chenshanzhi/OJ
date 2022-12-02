@@ -6,6 +6,7 @@
 [problem-aoj-0121]: https://onlinejudge.u-aizu.ac.jp/problems/0121
 [problem-aoj-0189]: https://onlinejudge.u-aizu.ac.jp/problems/0189
 [problem-aoj-0525]: https://onlinejudge.u-aizu.ac.jp/problems/0525
+[problem-aoj-0531]: https://onlinejudge.u-aizu.ac.jp/problems/0531
 [problem-aoj-0558]: https://onlinejudge.u-aizu.ac.jp/problems/0558
 [problem-aoj-2170]: https://onlinejudge.u-aizu.ac.jp/problems/2170
 [problem-aoj-2200]: https://onlinejudge.u-aizu.ac.jp/problems/2200

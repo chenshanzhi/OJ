@@ -6,6 +6,7 @@
 [code-aoj-0121]: https://github.com/chenshanzhi/OJ/blob/main/AOJ/0121.cpp
 [code-aoj-0189]: https://github.com/chenshanzhi/OJ/blob/main/AOJ/0189.cpp
 [code-aoj-0525]: https://github.com/chenshanzhi/OJ/blob/main/AOJ/0525.cpp
+[code-aoj-0531]: https://github.com/chenshanzhi/OJ/blob/main/AOJ/0531.cpp
 [code-aoj-0558]: https://github.com/chenshanzhi/OJ/blob/main/AOJ/0558.cpp
 [code-aoj-2170]: https://github.com/chenshanzhi/OJ/blob/main/AOJ/2170.cpp
 [code-aoj-2200]: https://github.com/chenshanzhi/OJ/blob/main/AOJ/2200.cpp
